@@ -13,11 +13,7 @@ class ArrayFlattenerTest {
     }
     @Test
     void TwoDimensionalArrayEquals1DArray(){
-        int[][] input = {
-                { 1, 3 },
-                { 0 },
-                { 4, 5, 9 }
-        };
+        int[][] input = {{ 1, 3 },{ 0 },{ 4, 5, 9 }};
         int[] expected = {1,3,0,4,5,9};
         int[] output = arrayFlattener.flattenArray(input);
         assertArrayEquals(output, expected);
@@ -26,9 +22,6 @@ class ArrayFlattenerTest {
     @Test
     void NullInputThrowsException(){
         int[][] input = null;
-        assertThrows(NullPointerException.class,
-                ()->{
-                    arrayFlattener.flattenArray(input);
-                });
+        assertThrows(NullPointerException.class,()->{arrayFlattener.flattenArray(input);});
     }
 }
